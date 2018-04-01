@@ -1,0 +1,37 @@
+<!--
+  Generated template for the PlayersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>players</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <custom-toast #mytoast></custom-toast>
+
+<ion-list>
+  <ion-item style="background:chocolate;margin-bottom:20px" nolines *ngFor="let player of players">
+       <div class="left">
+          <div class="circle" [color]="getColor()">
+          </div>
+          <img src="{{player.img}}" alt="">
+       </div>
+       
+       <div class="right"> 
+         <span>{{player.name}}</span>
+         <ul>
+            <li *ngFor="let item of player.songs">{{item}}</li>
+         </ul>
+       </div>
+  </ion-item>
+</ion-list>
+<div style="margin:10px 150px 0 150px" *ngIf="hasmore">
+  <button ion-button full (click)="loadmore()">load more</button>
+</div>
+</ion-content>

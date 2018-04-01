@@ -1,7 +1,33 @@
 // http://ionicframework.com/docs/theming/
 
+ion-slides {
+  display: block;
+  width: 100%;
+  //margin-top: 58px;
+  height: auto
+  /* height: 100%; */
+}
 
-// App Global Sass
+.swiper-slide img {
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
+  /* max-height: 100%; */
+}
+
+.toolbar-background-md  {
+  /* padding: 4px; */
+  background: lightblue;
+}
+
+.toolbar-title{display: flex;justify-content: center}
+
+ul,li{padding: 0;margin: 0}
+li{list-style: none;}
+
+button.highlight{background: paleturquoise; color:yellowgreen}
+
+
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
 // styles are for the entire app and not just one component.

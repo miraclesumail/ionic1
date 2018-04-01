@@ -1,0 +1,29 @@
+{
+    "list":[
+        {
+        "name":"时时彩", "pid":1, "methods":[
+            {
+            "id":1, "name_cn":"五星", "children": [
+                {"id":2,"pid":1, "name_cn":"直选", "children":[
+                   {"id":22,"pid":2, "name_cn":"直选复式"},
+                   {"id":23,"pid":2, "name_cn":"直选单式"},
+                   {"id":24,"pid":2, "name_cn":"直选组合"}
+                ]
+                }
+              ]
+            },
+            {
+            "id":1, "name_cn":"三星", "children": [
+                {"id":2,"pid":1, "name_cn":"直选", "children":[
+                   {"id":22,"pid":2, "name_cn":"直选复式"},
+                   {"id":23,"pid":2, "name_cn":"直选单式"},
+                   {"id":24,"pid":2, "name_cn":"直选组合"}
+                ]
+                }
+              ]
+            }
+        ]
+    }
+    
+    ]
+}

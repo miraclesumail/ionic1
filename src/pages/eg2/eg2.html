@@ -1,0 +1,41 @@
+<!--
+  Generated template for the Eg2Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>eg2</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+eg2
+<button (click)="go()">go</button>
+
+<ion-list radio-group>
+    <ion-list-header>请选择：</ion-list-header>
+    <ion-item>
+      <ion-label>选项1</ion-label>
+      <ion-radio value="1" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>选项2</ion-label>
+      <ion-radio value="2"></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>标签</ion-label>
+      <ion-select>
+        <ion-option value="1">选项1</ion-option>
+        <ion-option value="2">选项2</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>

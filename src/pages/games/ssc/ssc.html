@@ -1,0 +1,94 @@
+<!--
+  Generated template for the Eg3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ssc</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-refresher (ionRefresh)="doRefresh($event)" (ionPull)="doPull($event)">
+    <ion-refresher-content  pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">下拉刷新</ion-refresher-content>
+  </ion-refresher>
+
+<ion-slides  class="history-slide" id="inner-side" *ngIf="share?.gameRecord?.data?.length">
+      <ion-spinner></ion-spinner>
+      <ion-slide>
+        <div class="history-wrap">
+          <ul class="history-table">
+            <li class="history-row">
+              <div class="history-cell">时间</div>
+              <div class="history-cell">彩种</div>
+              <div class="history-cell">投注金额</div>
+            </li>
+
+            <li class="history-row" *ngFor="let records of share?.gameRecord?.data;let i = index;">
+              <div class="history-cell">{{records.created_at?.replace(share.yearReg, '')}}</div>
+              <div class="history-cell">{{records.friendly_name}}</div>
+              <div class="history-cell">{{records.amount}}</div>
+            </li>
+          </ul>
+        </div>
+      </ion-slide>
+</ion-slides>  
+
+<!-- 上期开奖号 倒计时 -->
+<div class="wrap-top clear">
+        <div class="fl">
+          <div class="date" *ngIf="gameconfigdata.defaultData.data?.last_number">
+            第{{gameconfigdata.defaultData.data?.last_number}}期
+          </div>
+          <div class="wrap-top-num">
+            <i
+              *ngFor="let num of gameconfigdata.defaultData.data?.lottery_balls"
+              class="num-green">{{num}}</i>
+          </div>
+        </div>
+        <div class="fr">
+          <div class="date">第{{gameconfigdata.defaultData.data?.current_number}}期投注截止
+          </div>
+          <div class="time" *ngIf="gameconfigdata.istimeout">
+            <span class="time-num">{{gameconfigdata.clock.hours}}</span>
+            <span>:</span>
+            <span class="time-num">{{gameconfigdata.clock.minutes}}</span>
+            <span>:</span>
+            <span class="time-num">{{gameconfigdata.clock.seconds}}</span>
+          </div>
+        </div>
+      </div>
+
+
+<!-- 玩法选择 -->
+ <div class="alert-con">
+  <div class="play-select">
+    <div class="play-title">玩法选择</div>
+    <ul class="play-list clear">
+      <li *ngFor="let items of gameconfigdata.methedsList.game_ways"><i [class.play-yellow]="items.defaultMethod"
+                                                                        class="play-black">{{items.name_cn}}</i></li>
+    </ul>
+  </div>
+  <div class="after-select">
+    <div class="after-con" [class.active]="a.defaultMethod" *ngFor="let a of gameconfigdata.methedsList.game_ways">
+      <div class="after-list clear after-list-{{b.name_cn.length + 1}}" *ngFor="let b of a.children">
+        <div class="after-l"><i class="after-text">{{b.name_cn}}:</i></div>
+        <ul class="lastchina">
+          <li *ngFor="let c of b.children"><i  [class.play-yellow]="c.defaultMethod" class="play-black play-opacity"
+                                               (touchstart)="tmpComformMethod(a,b,c)">{{c.name_cn}}</i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="close-modal bet-btn" (touchstart)="comformMethod(a,b,c)">确定</div>
+</div>
+
+</ion-content>

@@ -1,0 +1,48 @@
+<!--
+  Generated template for the LotteryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <h1>lottery</h1>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+ 
+<ion-content padding>
+<div class="lottery-con">
+   <ul class="container">
+      <li *ngFor = "let qq of [1,3,5];" style="width:100%;display:flex;flex-direction:column;margin-bottom:20px">
+          <div style="width:100%;display:flex;justify-content:space-between" class="big-content">
+             <div *ngFor = "let item of lottery.slice(qq-1,qq+1)" (click)="toggle(item)" class="l-sort">
+                 {{item.name}}
+             </div>
+          </div>   
+             <div style="width:100"  class="b-content" *ngIf=" activeIndex != null && (activeIndex == qq || activeIndex == qq -1)">
+                 <a *ngFor = "let list of lottery[activeIndex]['group']" style="width:45%;background:yellow;margin-top:10px" (click)="goPage(list,'SscPage')">
+                   {{list.name}}
+                 </a>
+             </div>
+          
+          <!--<div *ngIf="index "></div>-->
+      </li>
+
+       <!--<li class="l-content" *ngFor = "let items of lottery" (click)="toggle(items)">
+           <div class="{{items.sort}} lottery-top">{{items.name}}</div>
+           <div class="small-sort" *ngIf = "items.sort != 'none' && items.show">
+              <a class="minum-sort" *ngFor = "let item of items.group">
+                     {{item.name}}
+              </a>
+           </div>
+       </li>-->
+   </ul>
+</div>
+</ion-content>

@@ -11,7 +11,7 @@
 <ion-content padding>
 
   <h3>Welcome to your first Ionic app!</h3>
-
+<button (click)="go()">go</button>
   <p>
     This starter project is our way of helping you get a functional app running in record time.
   </p>
@@ -22,4 +22,30 @@
     <button ion-button color="primary" menuToggle>Toggle Menu</button>
   </p>
 
+  
+    <!-- start 轮播图-->  
+    <!--<ion-slides>  
+      <ion-slide>  
+        <div class="box banner"><img src="../../assets/imgs/logo.png" /> </div>  
+      </ion-slide>  
+      <ion-slide>  
+        <div class="box banner"><img src="../../assets/imgs/asd.jpg" /></div>  
+      </ion-slide>  
+      <ion-slide >  
+        <div class="box banner"><img src="../../assets/img/qwe.jpg" /></div>  
+      </ion-slides>  
+    </ion-slides>  -->
+    <!-- end 轮播图--> 
+    <ion-slides #slides (ionSlideDidChange)="slideChanged()" autoplay=2000 loop=true effect="cube" speed=800>
+  <ion-slide  (click)="say()">
+        <div class="box banner"><img src="../../assets/imgs/logo.png" /> </div>  
+  </ion-slide>
+  <ion-slide>
+        <div class="box banner"><img src="../../assets/imgs/asd.jpg" /></div>  
+  </ion-slide>
+  <ion-slide>
+        <div class="box banner"><img src="../../assets/imgs/qwe.jpg" /></div>  
+  </ion-slide>
+</ion-slides> 
+    
 </ion-content>

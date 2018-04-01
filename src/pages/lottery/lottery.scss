@@ -1,0 +1,11 @@
+page-lottery {
+//    li.l-content{width: 45%;margin-right: 3%;margin-bottom: 20px;}
+
+//    .lottery-top{background: pink;height: 50px}
+      .l-sort{width:45%;height:50px;float:left;background: palevioletred;}
+
+      .big-content .l-sort:nth-of-type(2){float:right}
+
+      .b-content a:nth-of-type(odd){float: left}
+      .b-content a:nth-of-type(even){float: right}
+}

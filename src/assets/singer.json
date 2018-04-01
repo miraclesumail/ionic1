@@ -1,0 +1,14 @@
+{
+    "msg": "singer list",
+    "list": [
+        {"name": "jay-zhou", "songs":["初秋霸主","衣服殖民","we are the world"
+        ],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "edison-chen", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "miracle-qq", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "being-ray", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "sskk-ddd", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "jay-zhou", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "jay-zhou", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"},
+        {"name": "jay-zhou", "songs":["初秋霸主","衣服殖民","we are the world"],"img":"./assets/imgs/lunbo1.jpg"}
+    ]
+}

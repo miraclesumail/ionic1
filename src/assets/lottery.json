@@ -1,0 +1,25 @@
+{
+   "list": [{"name": "时时彩系列", "nav": "SSC|60", "sort":"hot","time": null, 
+   "group": [
+        {"name": "香港六合彩", "id":111},
+        {"name": "极速六合彩", "id":111},
+        {"name": "薄毛六合彩", "id":111}
+       ]
+   },
+  {"name": "11选5系列", "nav": "11Y", "sort":"new","time": null, 
+  "group": [
+      {"name":"江西11选5","id":222},
+      {"name":"江西11选5","id":222},
+      {"name":"江西11选5","id":222},
+      {"name":"江西11选5","id":222}
+  ]},
+  {"name": "六合彩系列", "nav": "LHC", "sort":"none","time": null, "group": []},
+  {"name": "幸运28系列", "nav": "KL", "sort":"new","time": null, 
+  "group": [
+       {"name":"幸运11选5","id":222},
+       {"name":"幸运江西11选5","id":222},
+       {"name":"幸运江西11选5","id":222}
+  ]},
+  {"name": "快三系列", "nav": "K3|DICE", "sort":"hot","time": null, "group": []},
+  {"name": "北京PK10", "nav": "PK10","sort":"none", "time": null, "group": []}]
+}

@@ -2,18 +2,22 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title color="axiba">Pages</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button color="primary" [class.highlight]="p.active" ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
     </ion-list>
   </ion-content>
 
-</ion-menu>
+  
 
+</ion-menu>
+<!--<custom-toast id="mytoast">
+
+</custom-toast>-->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
