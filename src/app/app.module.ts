@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
  import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { IonicStorageModule } from '@ionic/storage';
 
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -40,6 +41,7 @@ import { GameConfigProvider } from '../providers/game-config/game-config';
     BrowserAnimationsModule, 
     HttpClientModule,ComponentsModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

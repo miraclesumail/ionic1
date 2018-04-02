@@ -21,7 +21,41 @@
       refreshingText="Refreshing...">下拉刷新</ion-refresher-content>
   </ion-refresher>
 
-<ion-slides  class="history-slide" id="inner-side" *ngIf="share?.gameRecord?.data?.length">
+ <ion-segment [(ngModel)]="segment" (ionChange)="updateList()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorite">
+        Favorites
+      </ion-segment-button>
+    </ion-segment>
+<ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateData()"
+                   placeholder="Search">
+    </ion-searchbar>
+</ion-toolbar>
+<ion-list>
+    <ion-item-sliding *ngFor="let session of showList" #slidingItem >
+            <button ion-item [class.active] = 'session.favorite'>
+            <h3>{{session.name}} {{session.time}}</h3>
+            
+            </button>
+
+            <ion-item-options>
+            <button ion-button color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="!session.favorite">
+                Favorite
+            </button>
+            <button ion-button color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="session.favorite">
+                Remove
+            </button>
+            </ion-item-options>
+
+    </ion-item-sliding>
+</ion-list>
+
+<!--<ion-slides  class="history-slide" id="inner-side" *ngIf="share?.gameRecord?.data?.length">
       <ion-spinner></ion-spinner>
       <ion-slide>
         <div class="history-wrap">
@@ -40,10 +74,10 @@
           </ul>
         </div>
       </ion-slide>
-</ion-slides>  
+</ion-slides>  -->
 
 <!-- 上期开奖号 倒计时 -->
-<div class="wrap-top clear">
+<!--<div class="wrap-top clear">
         <div class="fl">
           <div class="date" *ngIf="gameconfigdata.defaultData.data?.last_number">
             第{{gameconfigdata.defaultData.data?.last_number}}期
@@ -65,11 +99,11 @@
             <span class="time-num">{{gameconfigdata.clock.seconds}}</span>
           </div>
         </div>
-      </div>
+      </div>-->
 
 
 <!-- 玩法选择 -->
- <div class="alert-con">
+ <!--<div class="alert-con">
   <div class="play-select">
     <div class="play-title">玩法选择</div>
     <ul class="play-list clear">
@@ -89,6 +123,6 @@
     </div>
   </div>
   <div class="close-modal bet-btn" (touchstart)="comformMethod(a,b,c)">确定</div>
-</div>
+</div>-->
 
 </ion-content>

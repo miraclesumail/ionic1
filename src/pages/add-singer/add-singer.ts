@@ -18,6 +18,8 @@ export class AddSingerPage {
   song:string;
   songs:Array<string> = [];
 
+  //aa = new Map<number,HTMLIonLoadingElement>()
+
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public navParams: NavParams) {
   }
 
